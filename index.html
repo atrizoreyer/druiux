@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amirreza Nezami | Financial Crime Risk</title>
+  <meta
+    name="description"
+    content="AML-focused personal website for Amirreza Nezami, covering transaction monitoring, sanctions screening, KYC alignment, and case documentation."
+  />
+  <meta name="theme-color" content="#08111f" />
+  <meta property="og:title" content="Amirreza Nezami | Financial Crime Risk" />
+  <meta
+    property="og:description"
+    content="Single-page AML portfolio focused on recruiter clarity, case-based thinking, and financial crime risk positioning."
+  />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308111f'/%3E%3Cpath d='M32 10l16 6v13c0 11-6.5 20-16 25-9.5-5-16-14-16-25V16l16-6z' fill='%2311c5bf' fill-opacity='.14' stroke='%2368e0dc' stroke-width='2.5'/%3E%3Cpath d='M27 23h10.5c3.6 0 6.5 2.8 6.5 6.3 0 3.6-2.9 6.4-6.5 6.4h-6V42H27V23zm4.5 4.1v4.7h5.5c1.5 0 2.4-.9 2.4-2.3 0-1.5-.9-2.4-2.4-2.4h-5.5z' fill='%23eef4ff'/%3E%3C/svg%3E"
+  />
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-soft: #0d1829;
+      --bg-elevated: rgba(10, 22, 37, 0.9);
+      --panel: rgba(255, 255, 255, 0.04);
+      --panel-strong: rgba(255, 255, 255, 0.06);
+      --line: rgba(255, 255, 255, 0.1);
+      --text: #eef4ff;
+      --muted: #97a7be;
+      --accent: #68e0dc;
+      --accent-strong: #11c5bf;
+      --warm: #f6c47d;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
+
+    body,
+    section,
+    header[id] {
+      scroll-margin-top: 96px;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+      padding-top: 74px;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(17, 197, 191, 0.14), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(246, 196, 125, 0.08), transparent 22%),
+        linear-gradient(180deg, #07101c 0%, #08111f 48%, #0a1424 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: -28%;
+      left: -28%;
+      width: 156vw;
+      height: 220vh;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.068) 5px, transparent 5px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.058) 5px, transparent 5px);
+      background-size: 78px 44px;
+      transform: rotate(-30deg);
+      transform-origin: center;
+      opacity: 0.54;
+      -webkit-mask-image:
+        radial-gradient(circle at 18% 24%, rgba(0, 0, 0, 0.92), transparent 42%),
+        radial-gradient(circle at 72% 58%, rgba(0, 0, 0, 0.78), transparent 36%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.46), transparent 88%);
+      mask-image:
+        radial-gradient(circle at 18% 24%, rgba(0, 0, 0, 0.9), transparent 42%),
+        radial-gradient(circle at 72% 58%, rgba(0, 0, 0, 0.75), transparent 36%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.46), transparent 88%);
+    }
+
+    .nav,
+    .hero,
+    section,
+    .footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 17, 31, 0.76);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-text {
+      display: inline-block;
+      color: rgba(245, 248, 255, 0.92);
+      background-image: linear-gradient(
+        100deg,
+        rgba(245, 248, 255, 0.82) 0%,
+        rgba(245, 248, 255, 0.82) 40%,
+        rgba(255, 244, 201, 1) 50%,
+        rgba(255, 255, 255, 0.98) 56%,
+        rgba(245, 248, 255, 0.84) 62%,
+        rgba(245, 248, 255, 0.82) 100%
+      );
+      background-size: 220% 100%;
+      background-position: 120% 50%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brand-text-shimmer 5s linear infinite alternate;
+    }
+
+    .brand-text span {
+      color: inherit;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @supports not (-webkit-background-clip: text) {
+      .brand-text {
+        color: var(--text);
+        background: none;
+        animation: none;
+      }
+
+      .brand-text span {
+        color: var(--accent);
+      }
+    }
+
+    @keyframes brand-text-shimmer {
+      0% {
+        background-position: 120% 50%;
+      }
+
+      100% {
+        background-position: -20% 50%;
+      }
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(104, 224, 220, 0.22), rgba(17, 197, 191, 0.08));
+      border: 1px solid rgba(104, 224, 220, 0.35);
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav-toggle {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .nav-toggle-label {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      width: 18px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: currentColor;
+      position: relative;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .nav-toggle-label span::before {
+      top: -6px;
+    }
+
+    .nav-toggle-label span::after {
+      top: 6px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span {
+      background: transparent;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .hero {
+      padding: 84px 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .section-shell,
+    .focus-card,
+    .case-card,
+    .contact-card,
+    .proof-item {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--panel);
+    }
+
+    .hero-main {
+      position: relative;
+      overflow: hidden;
+      padding: 40px;
+      background:
+        linear-gradient(145deg, rgba(104, 224, 220, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: -40px;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(104, 224, 220, 0.16), transparent 70%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(104, 224, 220, 0.55);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 5.1vw, 4.7rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      max-width: 760px;
+    }
+
+    .headline-accent {
+      color: var(--warm);
+    }
+
+    .subheadline {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-role-target {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #031014;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn .action-icon {
+      margin-right: 8px;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.03));
+    }
+
+    .profile-photo-wrap {
+      position: relative;
+      padding: 10px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .profile-photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      filter: saturate(0.94) contrast(1.02);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .photo-name-badge {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      pointer-events: none;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .photo-name-badge span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(246, 196, 125, 0.34);
+      background: linear-gradient(180deg, rgba(8, 17, 31, 0.8), rgba(8, 17, 31, 0.58));
+      color: #f4ddb6;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+      backdrop-filter: blur(8px);
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      line-height: 1.15;
+    }
+
+    .snapshot-grid,
+    .proof-grid,
+    .focus-grid,
+    .case-grid,
+    .cert-grid,
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .snapshot-grid {
+      gap: 12px;
+    }
+
+    .snapshot-item {
+      padding: 14px 15px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .snapshot-item strong,
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .snapshot-item span,
+    .proof-item span,
+    .focus-card p,
+    .case-card p,
+    .contact-card p,
+    .section-copy,
+    .section-intro p {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 24px 0;
+    }
+
+    .section-shell {
+      padding: 30px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.025));
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-intro {
+      max-width: min(980px, 100%);
+    }
+
+    .section-intro p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.72;
+    }
+
+    .proof-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .proof-item {
+      padding: 22px 18px;
+      background:
+        linear-gradient(145deg, rgba(104, 224, 220, 0.07), transparent 42%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.03));
+    }
+
+    .proof-item code {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+    }
+
+    .proof-item strong {
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .focus-card {
+      padding: 22px;
+      background:
+        linear-gradient(145deg, rgba(104, 224, 220, 0.06), transparent 40%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.025));
+    }
+
+    .focus-card h4,
+    .case-card h4,
+    .contact-card h4 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    .case-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 100%;
+    }
+
+    .evidence-preview {
+      width: 100%;
+      min-height: 168px;
+      margin: 4px 0 4px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .evidence-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .evidence-preview--image {
+      padding: 14px;
+    }
+
+    .evidence-preview--image img {
+      max-width: 260px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .evidence-preview--placeholder {
+      padding: 18px;
+      justify-content: flex-start;
+    }
+
+    .evidence-panel {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      border: 1px solid rgba(104, 224, 220, 0.16);
+      background:
+        linear-gradient(180deg, rgba(104, 224, 220, 0.06), rgba(255, 255, 255, 0.02));
+      padding: 14px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .evidence-kicker {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .evidence-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .evidence-row::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(104, 224, 220, 0.78);
+      flex: 0 0 auto;
+    }
+
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(104, 224, 220, 0.22);
+      background: rgba(104, 224, 220, 0.08);
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .case-points {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .case-points li + li {
+      margin-top: 8px;
+    }
+
+    .case-foot {
+      margin-top: auto;
+      padding-top: 8px;
+      color: var(--warm);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .case-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .cert-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: stretch;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--panel);
+    }
+
+    .cert-meta {
+      display: grid;
+      gap: 8px;
+    }
+
+    .cert-meta h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .cert-line,
+    .cert-date {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cert-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    .cert-thumb {
+      width: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      flex: 0 0 auto;
+      display: flex;
+      align-self: stretch;
+    }
+
+    .cert-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-card {
+      padding: 24px;
+    }
+
+    .contact-name {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .contact-heading {
+      margin: 0 0 20px;
+      max-width: 760px;
+    }
+
+    .contact-heading strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f4ddb6;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .contact-heading span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .contact-list a:hover {
+      color: var(--accent);
+    }
+
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      text-underline-offset: 4px;
+    }
+
+    .action-link .link-label {
+      border-bottom: 1px solid rgba(104, 224, 220, 0.28);
+      transition: border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .action-link:hover .link-label {
+      border-color: rgba(238, 244, 255, 0.5);
+    }
+
+    .action-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: currentColor;
+      flex: 0 0 auto;
+    }
+
+    .action-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .footer {
+      padding: 34px 0 56px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1040px) {
+      .proof-grid,
+      .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 980px) {
+      body {
+        padding-top: 72px;
+      }
+
+      .nav-inner {
+        position: relative;
+        min-height: 72px;
+      }
+
+      .nav-toggle-label {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        left: 0;
+        display: grid;
+        gap: 2px;
+        padding: 10px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(8, 17, 31, 0.95);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(18px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .nav-toggle:checked ~ .nav-links {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .hero-grid,
+      .case-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .section-shell,
+      .focus-card,
+      .case-card,
+      .contact-card,
+      .cert-card,
+      .proof-item {
+        padding: 22px;
+      }
+
+      .cert-card {
+        grid-template-columns: 1fr;
+      }
+
+      body::before {
+        top: -18%;
+        left: -18%;
+        width: 136vw;
+        height: 180vh;
+      }
+    }
+
+    @media (max-width: 640px) {
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .subheadline {
+        font-size: 0.98rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn,
+      .proof-grid,
+      .focus-grid {
+        width: 100%;
+      }
+
+      .proof-grid,
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      body::before {
+        top: -12%;
+        left: -12%;
+        width: 124vw;
+        height: 165vh;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a class="brand-link" href="#top" title="Back to top">
+          <div class="brand-mark">AN</div>
+          <div class="brand-text">Amirreza <span>Nezami</span></div>
+        </a>
+      </div>
+      <input class="nav-toggle" id="nav-toggle" type="checkbox" />
+      <label class="nav-toggle-label" for="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+      </label>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#proof">Recruiter Snapshot</a>
+        <a href="#focus">Focus Areas</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#certification">Certification</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <div class="eyebrow">AML Portfolio | Toronto</div>
+        <h1>
+          AML and financial crime review with
+          <span class="headline-accent">clear judgment,</span>
+          structured documentation, and operational focus.
+        </h1>
+        <p class="subheadline">
+          Focused on AML, transaction monitoring, sanctions operations, and financial crime review work.
+          This page shows how I approach alerts and case review: assess the facts, test profile alignment, identify relevant risk,
+          and document conclusions clearly.
+        </p>
+
+        <div class="hero-role-target">
+          Target roles: AML Analyst, Transaction Monitoring Analyst, KYC Analyst, Sanctions Operations, Financial Crime Operations.
+        </div>
+        <div class="hero-role-target">
+Current focus: developing practical AML review skills through case analysis, transaction monitoring scenarios, and structured documentation practice.
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cases" title="Jump to the AML case study section">
+            <span class="action-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 12h10"></path><path d="m13 8 4 4-4 4"></path></svg>
+            </span>
+            Review Case Studies
+          </a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/amirreza-nezami" target="_blank" rel="noopener noreferrer" title="Opens LinkedIn profile in a new tab">
+            <span class="action-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M6 10v8"></path><path d="M10 18v-5.2c0-1.6 1.1-2.8 2.6-2.8s2.4 1 2.4 2.8V18"></path><path d="M10 12c.7-1.2 1.8-2 3.2-2"></path></svg>
+            </span>
+            Open LinkedIn
+          </a>
+          <a class="btn btn-secondary" href="assets/Amirreza_Nezami_Resume_AML_Financial_Crime_Risk_Analyst.pdf" target="_blank" rel="noopener noreferrer" title="Opens resume PDF in a new tab">
+            <span class="action-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 3h6l4 4v14H8z"></path><path d="M14 3v4h4"></path><path d="M10 14h4"></path><path d="M10 17h4"></path></svg>
+            </span>
+            Resume PDF
+          </a>
+        </div>
+
+        <div class="hero-note">
+          Built to give recruiters and hiring managers a fast read on review style, written communication, and fit for AML operations work.
+        </div>
+
+        <div class="hero-meta">
+          <span>Current focus: AML and financial crime operations</span>
+          <span>Location: Toronto, Ontario</span>
+          <span>Open to AML and banking operations opportunities</span>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="profile-photo-wrap">
+          <img
+            class="profile-photo"
+            src="assets/Amirreza_Nezami.png"
+            alt="Portrait of Amirreza Nezami"
+          />
+          <div class="photo-name-badge">
+            <span>Amirreza Nezami</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="kicker">Current Positioning</h2>
+          <div class="snapshot-grid">
+            <div class="snapshot-item">
+              <strong>Target Roles</strong>
+              <span>AML Analyst, Transaction Monitoring Analyst, KYC Analyst, Sanctions Operations, Financial Crime Operations.</span>
+            </div>
+            <div class="snapshot-item">
+              <strong>Working Style</strong>
+              <span>Structured review, evidence-first reasoning, concise documentation, and defensible escalation logic.</span>
+            </div>
+            <div class="snapshot-item">
+              <strong>Core Strength</strong>
+              <span>Strong fit for work that depends on attention to detail, alert review, consistency, and clear written rationale.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="snapshot-item">
+          <strong>Location</strong>
+          <span>Toronto, Ontario. Open to AML, banking operations, and financial crime risk opportunities.</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-top">
+          <div class="section-intro">
+            <h2 class="section-title">About</h2>
+            <p>
+              My focus is AML and financial crime operations, especially transaction monitoring, sanctions-related review, KYC alignment, and case documentation.
+              I focus on developing strong capabilities in structured review, documentation, escalation logic, and consistency analysis
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-top">
+          <div class="section-intro">
+            <h2 class="section-title">Recruiter Snapshot</h2>
+            <p>
+              A quick scan of the review habits most relevant to AML hiring teams.
+            </p>
+          </div>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-item">
+            <code>01 / monitoring</code>
+            <strong>Pattern Recognition</strong>
+            <span>I review transaction activity for changes in volume, frequency, channel, and behavior that do not fit the expected account profile.</span>
+          </div>
+
+          <div class="proof-item">
+            <code>02 / screening</code>
+            <strong>Alert Review Approach</strong>
+            <span>I separate confirmed facts, contextual information, and unresolved risk so alerts can be closed or escalated on clear grounds.</span>
+          </div>
+
+          <div class="proof-item">
+            <code>03 / documentation</code>
+            <strong>Case Writing</strong>
+            <span>I write case notes that are concise, supportable, and easy for a second reviewer, manager, or QA team to follow.</span>
+          </div>
+
+          <div class="proof-item">
+            <code>04 / judgment</code>
+            <strong>Escalation Decision Framework</strong>
+            <span>I focus on whether the available facts support escalation, additional review, or closure rather than relying on initial appearance alone.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-top">
+          <div class="section-intro">
+            <h2 class="section-title">Focus Areas</h2>
+            <p>
+              The workstreams I am focused on through scenario analysis, writing practice, and AML case review.
+            </p>
+          </div>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-card">
+            <h4>Transaction Monitoring</h4>
+            <p>Reviewing structuring indicators, unusual cash activity, and transactional behavior that does not align with expected account use.</p>
+          </div>
+
+          <div class="focus-card">
+            <h4>Sanctions Screening</h4>
+            <p>Learning-based sanctions screening analysis using name matching and contextual identifiers</p>
+          </div>
+
+          <div class="focus-card">
+            <h4>KYC / CDD Alignment</h4>
+            <p>Comparing stated customer profile and expected activity against observed behavior to identify inconsistencies and gaps.</p>
+          </div>
+
+          <div class="focus-card">
+            <h4>Investigative Documentation</h4>
+            <p>Writing clear case summaries that show what was reviewed, what matters, and why escalation is or is not warranted.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-top">
+          <div class="section-intro">
+            <h2 class="section-title">Case Studies</h2>
+            <p>
+              Short examples of how I would review common AML scenarios, test assumptions, and document conclusions.
+            </p>
+                        <p>
+The following scenarios are independently developed case studies designed to simulate real-world AML alert review and documentation.
+            </p>
+          </div>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <span class="tag">Structuring Review</span>
+            <h4>Repeated Cash Deposits Below Reporting Thresholds</h4>
+            <p>
+              A scenario built around repeated sub-threshold deposits over a compressed time window.
+            </p>
+  
+            
+
+            <a class="evidence-preview evidence-preview--image" href="assets/AML_Case_Study_Transaction_Monitoring_Amirreza_Nezami.jpg" target="_blank" rel="noopener noreferrer" title="Opens the investigation snapshot image in a new tab">
+              <img src="assets/AML_Case_Study_Transaction_Monitoring_Amirreza_Nezami.jpg" alt="Structuring Review case study investigation snapshot" />
+            </a>
+
+
+
+
+            <ul class="case-points">
+              <li>Assess whether the activity pattern appears intentionally segmented rather than naturally occurring.</li>
+              <li>Compare volume, frequency, and branch usage against the expected customer profile and account purpose.</li>
+              <li>Document what supports escalation and what additional facts would reduce uncertainty.</li>
+            </ul>
+            <div class="case-actions">
+              <a class="action-link" href="assets/AML_Case_Study_Transaction_Monitoring_Amirreza_Nezami.pdf" target="_blank" rel="noopener noreferrer" title="Opens the PDF case study in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 3h6l4 4v14H8z"></path><path d="M14 3v4h4"></path><path d="M10 14h4"></path><path d="M10 17h4"></path></svg>
+                </span>
+                <span class="link-label">View PDF case study</span>
+              </a>
+
+
+
+
+
+              <a class="action-link" href="assets/AML_Case_Study_Transaction_Monitoring_Amirreza_Nezami.jpg" target="_blank" rel="noopener noreferrer" title="Opens the investigation snapshot image in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"></path><path d="m8 13 2.5-2.5L14 14l2-2 4 4"></path><path d="M9 10h.01"></path></svg>
+                </span>
+                <span class="link-label">View investigation snapshot</span>
+              </a>
+
+
+
+
+
+            <a class="action-link" href="https://www.linkedin.com/in/amirreza-nezami/overlay/1772851392298/single-media-viewer/?profileId=ACoAAA4Ssr4BCJEQAhmt_dB_KXGpzJIf4hjCS3g" target="_blank" rel="noopener noreferrer" title="Opens the LinkedIn case study write-up in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M6 10v8"></path><path d="M10 18v-5.2c0-1.6 1.1-2.8 2.6-2.8s2.4 1 2.4 2.8V18"></path><path d="M10 12c.7-1.2 1.8-2 3.2-2"></path></svg>
+                </span>
+                <span class="link-label">View LinkedIn case write-up</span>
+              </a>
+            </div>
+            <div class="case-foot">Escalation rationale documented against customer profile and activity pattern.</div>
+          </article>
+
+          <article class="case-card">
+            <span class="tag">Fraud / Money Mule Review</span>
+            <h4>Money Mule Network and Potential Fraud Proceeds</h4>
+            <p>
+              A case focused on linked-account behavior, layered transfers, and potential fraud proceeds moving through connected parties.
+            </p>
+            <a class="evidence-preview evidence-preview--image" href="assets/AML_Money_Mule_Case_Study_Amirreza_Nezami.jpeg" target="_blank" rel="noopener noreferrer" title="Opens the investigation snapshot image in a new tab">
+              <img src="assets/AML_Money_Mule_Case_Study_Amirreza_Nezami.jpeg" alt="Money mule case study investigation snapshot" />
+            </a>
+            <ul class="case-points">
+              <li>Review account relationships, transaction flow, and recipient patterns for signs of coordinated activity.</li>
+              <li>Assess whether the movement of funds is consistent with ordinary use or suggests fraud-linked mule behavior.</li>
+              <li>Document the indicators supporting further review, escalation, and potential fraud concern.</li>
+            </ul>
+            <div class="case-actions">
+              <a class="action-link" href="assets/AML_Money_Mule_Case_Study_Amirreza_Nezami.pdf" target="_blank" rel="noopener noreferrer" title="Opens the PDF case study in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 3h6l4 4v14H8z"></path><path d="M14 3v4h4"></path><path d="M10 14h4"></path><path d="M10 17h4"></path></svg>
+                </span>
+                <span class="link-label">View PDF case study</span>
+              </a>
+              <a class="action-link" href="assets/AML_Money_Mule_Case_Study_Amirreza_Nezami.jpeg" target="_blank" rel="noopener noreferrer" title="Opens the investigation snapshot image in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"></path><path d="m8 13 2.5-2.5L14 14l2-2 4 4"></path><path d="M9 10h.01"></path></svg>
+                </span>
+                <span class="link-label">View investigation snapshot</span>
+              </a>
+            <a class="action-link" href="https://www.linkedin.com/in/amirreza-nezami/overlay/1773265671244/single-media-viewer/?profileId=ACoAAA4Ssr4BCJEQAhmt_dB_KXGpzJIf4hjCS3g" target="_blank" rel="noopener noreferrer" title="Opens the LinkedIn case study write-up in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M6 10v8"></path><path d="M10 18v-5.2c0-1.6 1.1-2.8 2.6-2.8s2.4 1 2.4 2.8V18"></path><path d="M10 12c.7-1.2 1.8-2 3.2-2"></path></svg>
+                </span>
+                <span class="link-label">View LinkedIn case write-up</span>
+              </a>
+            </div>
+            <div class="case-foot">Review documented against transaction flow, linked activity, and potential fraud indicators.</div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certification">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-top">
+          <div class="section-intro">
+            <h2 class="section-title">Certification</h2>
+            <p>
+              A completed AML course certificate supporting my current focus on financial crime review, transaction monitoring, and AML fundamentals.
+            </p>
+          </div>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card">
+            <div class="cert-meta">
+              <h4>Anti-Money Laundering</h4>
+              <div class="cert-line">Coursera | Authorized by Alfaisal University and KLD</div>
+              <div class="cert-date">Completed March 4, 2026</div>
+              <div class="cert-actions">
+                <a class="action-link" href="assets/Amirreza_Nezami_Anti_Money_Laundering_Coursera.pdf" target="_blank" rel="noopener noreferrer" title="Opens the course certificate PDF in a new tab">
+                  <span class="action-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M8 3h6l4 4v14H8z"></path><path d="M14 3v4h4"></path><path d="M10 14h4"></path><path d="M10 17h4"></path></svg>
+                  </span>
+                  <span class="link-label">View course certificate</span>
+                </a>
+              </div>
+            </div>
+
+            <a class="cert-thumb" href="assets/Amirreza Nezami - Anti-Money Laundering (AML), Coursera G6WN0U4VA3SJ.jpeg" target="_blank" rel="noopener noreferrer" title="Opens the certificate preview image in a new tab">
+              <img src="assets/Amirreza Nezami - Anti-Money Laundering (AML), Coursera G6WN0U4VA3SJ.jpeg" alt="Amirreza Nezami's AML course certificate preview" />
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-shell">
+        <div class="section-top">
+          <div class="section-intro">
+            <h2 class="section-title">Contact</h2>
+            <p>
+              Open to AML, transaction monitoring, KYC, and financial crime operations roles within banking and regulated environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-heading">
+          <strong>Amirreza Nezami</strong>
+          <span>Supporting safer financial systems through AML, Sanctions, Bribery, and Corruption-focused review.</span>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h4>Direct</h4>
+            <div class="contact-list">
+              <a class="action-link" href="mailto:amirreza.nezami28@gmail.com" title="Opens your email app to send an email">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"></path><path d="m4 8 8 6 8-6"></path></svg>
+                </span>
+                <span class="link-label">amirreza.nezami28@gmail.com</span>
+              </a>
+              <a class="action-link" href="tel:+16477412890" title="Starts a phone call on supported devices">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7.5 4.5h3l1.5 4-2 1.8a14 14 0 0 0 4.7 4.7l1.8-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5A15.5 15.5 0 0 1 4.5 6c0-.8.7-1.5 1.5-1.5Z"></path></svg>
+                </span>
+                <span class="link-label">647-741-2890</span>
+              </a>
+              <span>Toronto, Ontario</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h4>Profiles</h4>
+            <div class="contact-list">
+              <a class="action-link" href="https://www.linkedin.com/in/amirreza-nezami" target="_blank" rel="noopener noreferrer" title="Opens LinkedIn profile in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M6 10v8"></path><path d="M10 18v-5.2c0-1.6 1.1-2.8 2.6-2.8s2.4 1 2.4 2.8V18"></path><path d="M10 12c.7-1.2 1.8-2 3.2-2"></path></svg>
+                </span>
+                <span class="link-label">LinkedIn Profile</span>
+              </a>
+              <a class="action-link" href="assets/Amirreza_Nezami_Resume_AML_Financial_Crime_Risk_Analyst.pdf" target="_blank" rel="noopener noreferrer" title="Opens resume PDF in a new tab">
+                <span class="action-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 3h6l4 4v14H8z"></path><path d="M14 3v4h4"></path><path d="M10 14h4"></path><path d="M10 17h4"></path></svg>
+                </span>
+                <span class="link-label">Resume PDF</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      AML and financial crime profile focused on transaction monitoring, screening, and case review.
+    </div>
+  </footer>
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (navToggle) navToggle.checked = false;
+      });
+    });
+  </script>
+</body>
+</html>
